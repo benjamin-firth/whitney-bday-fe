@@ -93,7 +93,7 @@ const StyledButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 60px;
+  margin-right: 70px;
   margin-bottom: 25px;
   width: 80%;
 `;
@@ -106,7 +106,7 @@ const StyledButtons = styled.button`
   height: 100px;
   font-family: 'Press Start 2P', cursive;
   font-size: 100px;
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 10px;
   width: 100px;
 `;
 
