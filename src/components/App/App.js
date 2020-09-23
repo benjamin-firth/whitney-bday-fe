@@ -70,8 +70,8 @@ const StyledMain = styled.main`
   background-color: #f5f0e1;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  justify-content: space-around;
+  height: 95vh;
+  justify-content: space-evenly;
   padding: 10px 10px 10px 10px;
 
   h1 {
@@ -93,7 +93,7 @@ const StyledButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 45px;
+  margin-right: 60px;
   margin-bottom: 25px;
   width: 80%;
 `;
