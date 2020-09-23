@@ -72,7 +72,7 @@ const StyledMain = styled.main`
   flex-direction: column;
   height: 100vh;
   justify-content: space-around;
-  padding: 10px 20px 10px 10px;
+  padding: 10px 10px 10px 10px;
 
   h1 {
     color: #ff6e40;
@@ -93,8 +93,8 @@ const StyledButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 25px;
-  margin-bottom: 15px;
+  margin-right: 45px;
+  margin-bottom: 25px;
   width: 80%;
 `;
 
@@ -106,7 +106,7 @@ const StyledButtons = styled.button`
   height: 100px;
   font-family: 'Press Start 2P', cursive;
   font-size: 100px;
-  margin: 0px 20px 40px 20px;
+  margin: 0px 0px 0px 20px;
   width: 100px;
 `;
 
