@@ -93,7 +93,8 @@ const StyledButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 15px;
+  margin-right: 25px;
+  margin-bottom: 15px;
   width: 80%;
 `;
 
