@@ -100,7 +100,7 @@ const StyledButtons = styled.button`
   height: 100px;
   font-family: 'Press Start 2P', cursive;
   font-size: 100px;
-  margin: 0px 30px 40px 30px;
+  margin: 0px 20px 40px 20px;
   width: 100px;
 `;
 
