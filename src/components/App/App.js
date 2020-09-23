@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import './App.css';
 
 const App = () => {
+  const [count, setCount] = useState(1);
+
+  
+  // const getCount = async () => {
+  //   const response = await fetch("https://whitneys-b-day-surprise.herokuapp.com/");
+  //   console.log(response);
+  //   return response;
+  // };
+  
+  const makeNewCount = (direction) => {
+    direction === 'up' ? setCount(count + 1) : setCount(count - 1);
+
+  };
+
+  // useEffect(() => {
+  //   getCount();
+  // });
+
   return (
     <StyledMain>
       <h3>How many people are partying?!</h3>
-      <h1>1</h1>
+      <h1>{count}</h1>
       <StyledButtonContainer>
-        <StyledButtons>-</StyledButtons>
-        <StyledButtons>+</StyledButtons>
+        <StyledButtons onClick={() => makeNewCount('down')}>-</StyledButtons>
+        <StyledButtons onClick={() => makeNewCount('up')}>+</StyledButtons>
       </StyledButtonContainer>
     </StyledMain>
   );
