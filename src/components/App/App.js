@@ -72,6 +72,7 @@ const StyledMain = styled.main`
   flex-direction: column;
   height: 100vh;
   justify-content: space-around;
+  padding: 10px 20px 10px 10px;
 
   h1 {
     color: #ff6e40;
