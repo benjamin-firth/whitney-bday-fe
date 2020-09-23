@@ -3,23 +3,55 @@ import styled from 'styled-components';
 import './App.css';
 
 const App = () => {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState('');
 
-  
-  // const getCount = async () => {
-  //   const response = await fetch("https://whitneys-b-day-surprise.herokuapp.com/");
-  //   console.log(response);
-  //   return response;
-  // };
-  
-  const makeNewCount = (direction) => {
-    direction === 'up' ? setCount(count + 1) : setCount(count - 1);
-
+  const getCount = async () => {
+    const response = await fetch("https://whitneys-b-day-surprise.herokuapp.com/");
+    const initialData = await response.json();
+    return initialData.count[0].amount;
   };
 
-  // useEffect(() => {
-  //   getCount();
-  // });
+  const modifyCount = async (method, info) => {
+    let url;
+    method === 'PATCH' ? 
+      url = "https://whitneys-b-day-surprise.herokuapp.com/count/666" :
+      url = "https://whitneys-b-day-surprise.herokuapp.com/count/";
+
+    let options = {
+      method,
+      body: JSON.stringify(info),
+      headers: {
+        'Content-type': 'application/json',
+        'Accept': 'application/json'
+      }
+    };
+
+    const response = await fetch(url, options);
+    const data = await response.json();
+    return data;
+  };
+  
+  const makeNewCount = async (direction) => {
+    const newData = () => {
+      let newNum;
+      if (direction === 'up') {
+        newNum = count + 1;
+        setCount(count + 1);
+      } else {
+        newNum = count - 1;
+        setCount(count - 1);
+      };
+      return newNum;
+    };
+
+    const newDataToSend = { amount: newData() };
+
+    modifyCount('PATCH', newDataToSend).then(info => console.log(info));
+  };
+
+  useEffect(() => {
+    getCount().then(info => setCount(info))
+  }, []);
 
   return (
     <StyledMain>
