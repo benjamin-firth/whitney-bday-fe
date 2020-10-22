@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Intro from '../Intro/Intro';
 import './App.css';
 
 const App = () => {
   const [count, setCount] = useState('');
+  const [isIntro, changeIntro] = useState(true);
+
+  const goToMain = () => {
+    changeIntro(!isIntro);
+  };
 
   const getCount = async () => {
     const response = await fetch("https://whitneys-b-day-surprise.herokuapp.com/");
@@ -54,6 +60,8 @@ const App = () => {
   }, []);
 
   return (
+    isIntro ? 
+    <Intro goToMain={goToMain} /> : 
     <StyledMain>
       <h3>How many people are partying?!</h3>
       <h1>{count}</h1>
@@ -67,21 +75,21 @@ const App = () => {
 
 const StyledMain = styled.main`
   align-items: center;
-  background-color: #f5f0e1;
+  background-color: #E74C3D;
   display: flex;
   flex-direction: column;
-  height: 95vh;
+  height: 98vh;
   justify-content: space-evenly;
   padding: 10px 10px 10px 10px;
 
   h1 {
-    color: #ff6e40;
+    color: #3498DB;
     font-family: 'Press Start 2P', cursive;
-    font-size: 120px;
+    font-size: 130px;
   }
 
   h3 {
-    color: #1e3d59;
+    color: #F1C40F;
     font-family: 'Press Start 2P', cursive;
     font-size: 23px;
     margin-top: 20px;
@@ -99,9 +107,9 @@ const StyledButtonContainer = styled.div`
 `;
 
 const StyledButtons = styled.button`
-  background-color: #f5f0e1;
+  background-color: #E74C3D;
   border: none;
-  color: #1e3d59;
+  color: #F1C40F;
   cursor: pointer;
   height: 100px;
   font-family: 'Press Start 2P', cursive;
