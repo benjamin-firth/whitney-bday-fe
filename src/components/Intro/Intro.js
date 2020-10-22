@@ -9,7 +9,7 @@ const Intro = ({goToMain}) => {
   return (
     <section className='intro-body'>
       <h1 className="title">
-        Happy Birthday <span>Victoria</span><span className="fine-print">Press to enter the BirthdayBash!</span>
+        Happy Birthday Victoria<span className="fine-print">Press to enter the BirthdayBash!</span>
       </h1>
       <div onClick={clickHandler} className="skull" title="">
         <div className="decor">

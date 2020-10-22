@@ -84,7 +84,7 @@ const StyledMain = styled.main`
   h1 {
     color: #3498DB;
     font-family: 'Press Start 2P', cursive;
-    font-size: 130px;
+    font-size: 170px;
   }
 
   h3 {
