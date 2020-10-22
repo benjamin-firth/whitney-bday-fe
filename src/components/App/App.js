@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Intro from '../Intro/Intro';
-import './App.css';
 
 const App = () => {
   const [count, setCount] = useState('');
